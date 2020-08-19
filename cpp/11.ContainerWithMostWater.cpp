@@ -5,8 +5,7 @@ using namespace std;
 class Solution {
 public:
     int maxArea(vector<int>& height) {
-        int maxContain = 0;
-        int left = 0, right = height.size() - 1, area, h;
+        unsigned int left = 0, right = height.size() - 1, area, maxContain = 0;
 
         while (left < right) {
             if (height[left] < height[right]) {
@@ -20,6 +19,6 @@ public:
                 while (height[right--] >= height[right] && left < right);
             }
         }
-        return maxContain;
+        return (int) maxContain;
     }
 };
